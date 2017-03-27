@@ -25,12 +25,14 @@ public class SearchAndCountMultiple extends RecursiveTask<Integer>{
 	public static Integer countNoAppearances(int[] input, int co, Workload.Type wt, int noThreads) {
 		long t0 = System.currentTimeMillis();
 		SearchAndCountMultiple counter = new SearchAndCountMultiple(input, wt, co, noThreads, 0, input.length);
-		int insertGoodVariableName = ForkJoinPool.commonPool().invoke(counter);
+
+		ForkJoinPool pool = new ForkJoinPool(noThreads);
+
+		int result = pool.commonPool().invoke(counter);
 		long t1 = System.currentTimeMillis();
 		System.out.println("For (inputsize=" + input.length + ",workload=" + wt + ") SearchAndCount Multiple takes "
 				+ (t1 - t0) + " msec");
-
-		return insertGoodVariableName;
+		return result;
 	}
 
 	@Override

@@ -6,7 +6,7 @@ public class Main {
 
 	public static void main(String[] args) {
 
-	    DatasetGenerator dg = new DatasetGenerator(100000);
+	    DatasetGenerator dg = new DatasetGenerator(1000000);
 	    int[] input = dg.generate();
 	    
 	    taskA(input);
@@ -17,8 +17,8 @@ public class Main {
 		MergeSortSingle.sort(input);
 	}
 	
-	public static void taskB(int[] input, int numThreads){		
-		MergeSortMulti.sort(input, 4);
+	public static void taskB(int[] input, int numThreads){
+		MergeSortMulti.sort(input, numThreads);
 	}
 
 }
