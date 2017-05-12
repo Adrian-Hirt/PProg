@@ -2,6 +2,16 @@ package ethz.ch.pp.mergeSort;
 
 import ethz.ch.pp.util.DatasetGenerator;
 
+/*
+Feedback:
+
+Good job with task1. Try to avoid the fork,fork,join,join pattern in task 2 (in general there's nothing wrong with it, 
+		however as written in the slides I've sent you all it is buggy in java).
+
+Best,
+MR
+*/
+
 public class Main {
 
 	public static void main(String[] args) {
